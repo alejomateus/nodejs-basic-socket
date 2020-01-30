@@ -10,14 +10,15 @@ io.on('connection', (client) => {
     });
     client.on('sendMessage', (data, callback) => {
         console.log(data);
-        if (data.user) {
-            callback({
-                resp: 'All OK'
-            });
-        } else {
-            callback({
-                resp: 'I AM SORRY'
-            });
-        }
+        client.broadcast.emit('sendMessage', data);
+        // if (data.user) {
+        //     callback({
+        //         resp: 'All OK'
+        //     });
+        // } else {
+        //     callback({
+        //         resp: 'I AM SORRY'
+        //     });
+        // }
     });
 })

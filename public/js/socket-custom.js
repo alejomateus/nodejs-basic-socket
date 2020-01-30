@@ -13,6 +13,6 @@ socket.emit('sendMessage', {
 
 });
 socket.on('sendMessage', function (data) {
-    console.log(data);
+    console.log('Servidor: ',data);
 
 });
